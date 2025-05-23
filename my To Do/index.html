@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔥 Ultimate To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📅 আমার দৈনিক টু-ডু</h1>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+    <div class="datetime" id="datetime"></div>
+
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="নতুন টাস্ক লিখো..." />
+      <button id="addBtn">➕ যোগ করো</button>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">সকল</button>
+      <button class="filter" data-filter="completed">সম্পন্ন</button>
+      <button class="filter" data-filter="pending">বাকি</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Generator | JH MaRuF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔐 Password Generator</h1>
+
+    <label for="length">Password Length</label>
+    <input type="number" id="length" min="4" max="40" value="12" />
+
+    <div class="options">
+      <label><input type="checkbox" id="includeLower" checked /> Include Lowercase</label>
+      <label><input type="checkbox" id="includeUpper" checked /> Include Uppercase</label>
+      <label><input type="checkbox" id="includeNumbers" checked /> Include Numbers</label>
+      <label><input type="checkbox" id="includeSymbols" checked /> Include Symbols</label>
+    </div>
+
+    <div class="toggles">
+      <label><input type="checkbox" id="showPasswordToggle" onchange="toggleVisibility()"/> Show Password</label>
+      <label class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()" /> Dark Mode
+      </label>
+    </div>
+
+    <button onclick="generatePassword()">Generate</button>
+    <div id="passwordDisplay" class="hidden">Your password will appear here</div>
+    <div class="strength" id="strengthDisplay"></div>
+
+    <div class="action-buttons">
+      <button onclick="copyPassword()">Copy</button>
+      <button onclick="downloadPassword()">Download</button>
+    </div>
+
+    <div class="history">
+      <h3>🕘 Password History (Last 5)</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by <strong>JH MaRuF</strong><br>
+    <a href="mailto:jhmaruf750@gmail.com">jhmaruf750@gmail.com</a> |
+    <a href="https://github.com/jhmaruf750" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/jhmaruf750" target="_blank">LinkedIn</a><br>
+    Chapainawabganj, Rajshahi
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

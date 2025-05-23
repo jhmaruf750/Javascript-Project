@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🌦️ Weather Wizard</h1>
+
+    <div class="search-box">
+      <input type="text" id="cityinput" placeholder="Enter city name..." onkeydown="handleKey(event)">
+      <button onclick="getweather()">Get Weather</button>
+    </div>
+
+    <div id="weatherInfo" class="weather-card hidden"></div>
+    <div id="loader" class="loader hidden"></div>
+
+    <footer>Made by JH MaRuF 🚀</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

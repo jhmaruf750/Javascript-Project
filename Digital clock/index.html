@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Clock - JH MaRuF</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .myWatch {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 50px 30px;
+      text-align: center;
+      color: #ffffff;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      max-width: 350px;
+    }
+
+    .H {
+      font-size: 64px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .M {
+      font-size: 28px;
+      display: block;
+      margin-top: 5px;
+      color: #fdd835;
+    }
+
+    .date {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #e0e0e0;
+      display: block;
+    }
+
+    .nameTag {
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 25px;
+      color: #c5cae9;
+      letter-spacing: 1px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="myWatch">
+    <span class="H"> </span>
+    <span class="M"> </span>
+    <span class="date"> </span>
+    <div class="nameTag">Designed by JH MaRuF</div>
+  </div>
+
+  <script>
+    function mytime() {
+      var mydate = new Date();
+
+      var hr,
+        min = mydate.getMinutes() < 10 ? "0" + mydate.getMinutes() : mydate.getMinutes(),
+        sec = mydate.getSeconds() < 10 ? "0" + mydate.getSeconds() : mydate.getSeconds(),
+        M = mydate.getHours() >= 12 ? "PM" : "AM";
+
+      if (mydate.getHours() == 0) {
+        hr = 12;
+      } else if (mydate.getHours() > 12) {
+        hr = mydate.getHours() - 12;
+      } else {
+        hr = mydate.getHours();
+      }
+
+      var currentTime = hr + ":" + min + ":" + sec;
+
+      document.getElementsByClassName("H")[0].innerHTML = currentTime;
+      document.getElementsByClassName("M")[0].innerHTML = M;
+
+      var myday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var mymonth = [
+        "January", "February", "March", "April", "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
+
+      var day = mydate.getDate();
+      var currentdate = myday[mydate.getDay()] + ", " + mymonth[mydate.getMonth()] + " " + day;
+
+      document.getElementsByClassName("date")[0].innerHTML = currentdate;
+    }
+
+    mytime();
+    setInterval(mytime, 1000);
+  </script>
+</body>
+</html>
